@@ -2,3 +2,4 @@ env/
 db.slite3
 .DS_Store
 .idea/
+*.pyc
