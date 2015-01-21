@@ -40,3 +40,6 @@ class Problem(models.Model):
 
     class Meta:
         ordering = ('id', )
+
+    def tag(self):
+        return 1

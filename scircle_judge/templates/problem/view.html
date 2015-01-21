@@ -1,0 +1,82 @@
+{% extends "base/base.html" %}
+{% block title %} 超理等级测试－物理 {% endblock %}
+{% block style %}
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>超理等级测试 <small>物理</small></h1>
+    </div>
+    <div class="col-md-12">
+        <h3 class="  has-jax">
+             {% autoescape off %}
+                {{ problem.description }}
+             {% endautoescape %}
+        </h3>
+    </div>
+
+    <div class="col-md-12" style="margin-top:15px;">
+        {% for option in options %}
+        <p>
+            {% autoescape off %}
+                <button id="btn.3.2" type="button" class="btn btn-default btn-lg btn-block" style="word-break:break-all; white-space:normal;text-align:left;border-width:0px;">
+                    {{ option }}
+                </button>
+            {% endautoescape %}
+        </p>
+        {% endfor %}
+    </div>
+
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" style="border-color:white; background-color:white;">
+    <div class="container">
+        <br/>
+        <div class="col-md-1" style="text-align:center;">
+            <b>已耗时</b>
+        </div>
+        <div class="col-md-10">
+            <div class="progress">
+                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                    xx分xx秒
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1" style="text-align:center;">
+            <button type="button" class="btn btn-primary btn-sm">提交</button>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block javascript %}
+<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="http://cdn.bootcss.com/mathjax/2.4.0/MathJax.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+
+{% endblock %}

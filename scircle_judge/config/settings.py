@@ -25,6 +25,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.request",
 )
+# CRISPY
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
 
 
 STATIC_URL = '/static/'
@@ -46,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'problems',
     'tags',
     'accounts',

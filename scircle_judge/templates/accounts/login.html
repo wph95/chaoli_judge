@@ -1,0 +1,45 @@
+{% load crispy_forms_tags %}
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title> 超理测试题库－登录 </title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="background-image: radial-gradient(circle, rgb(48, 40, 45), rgb(16, 24, 30));">
+  	<table align="center" height="100%" width="100%">
+      	<tbody>
+          	<tr>
+              	<td>
+                  	<div style="width:300px; height:300px" class="container">
+                      	<div style="height:50px" id="header">
+                        	<h2 style="text-align:center;color:white">登录</h2>
+                      	</div>
+                      	<div style="padding:15px; height: 250px; background-color: rgb(255, 255, 255);" id="panel">
+                            <form method="post" role="form" name="signin" action="" class="ng-pristine ng-valid">
+                                {% csrf_token %}
+  								<div class="form-group">
+                                    <label for="username">用户名  {{ username_errors }}</label>
+                                    {{form.username}}
+
+ 								</div>
+  								<div class="form-group">
+    								<label for="password">密码 {{password_errors }}</label>
+    								 {{form.password}}
+
+  								</div>
+  								<div class="checkbox">
+    								<label>
+                                         <input type="checkbox" name="remember" checked><i></i>记住我</label>
+    								</label>
+  								</div>
+  								<button type="submit" class="btn btn-info btn-block">确认</button>
+							</form>
+                        </div>
+                  	</div>
+              	</td>
+         	</tr>
+      	</tbody>
+  	</table>
+
+</body></html>
